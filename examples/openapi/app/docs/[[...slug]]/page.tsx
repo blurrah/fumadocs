@@ -1,19 +1,21 @@
-import { source, openapi } from '@/lib/source';
+import { metadataImage } from '@/lib/metadata';
+import { openapi, source } from '@/lib/source';
+import defaultMdxComponents from 'fumadocs-ui/mdx';
 import {
-  DocsPage,
   DocsBody,
-  DocsTitle,
   DocsDescription,
+  DocsPage,
+  DocsTitle,
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { metadataImage } from '@/lib/metadata';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
+
+  console.log(page);
 
   if (!page) {
     notFound();

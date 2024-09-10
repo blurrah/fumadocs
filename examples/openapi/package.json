@@ -5,12 +5,14 @@
   "scripts": {
     "build": "next build",
     "build:docs": "node ./scripts/generate-docs.mjs",
+    "build:graphql": "node ./scripts/generate-graphql.mjs",
     "dev": "next dev",
     "start": "next start",
     "types:check": "fumadocs-mdx && tsc --noEmit"
   },
   "dependencies": {
     "fumadocs-core": "workspace:*",
+    "fumadocs-graphql": "workspace:*",
     "fumadocs-mdx": "workspace:*",
     "fumadocs-openapi": "workspace:*",
     "fumadocs-ui": "workspace:*",
